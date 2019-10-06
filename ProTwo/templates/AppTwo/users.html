@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Users</title>
+  </head>
+  <body>
+    <h1>The list of users : </h1>
+    <div class="a2">
+      {% if users %}
+      <table>
+        <thead>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+        </thead>
+        {% for u in users %}
+        <tr>
+          <td>{{u.fName}}</td>
+          <td>{{u.lName}}</td>
+          <td>{{u.email}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+      <p>No User details Found !</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
